@@ -15,7 +15,7 @@ if [[ $ip != $new_ip ]]; then
   git commit -a -m "IP Updated" > /dev/null 2>&1
   git push -u origin master > /dev/null 2>&1
   # UPDATE RANDOM BACKGROUND IMAGE
-  i=`find /var/www/gallery_preview_large/ -name "*.jpg" | sort -R | tail -1`
+  i=`find /var/www/mediadb/preview/ -name "*.jpg" | sort -R | tail -1`
   cp $i /var/www/pics/background.jpg
 fi
 
