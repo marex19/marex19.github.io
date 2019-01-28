@@ -15,8 +15,12 @@ if [[ $ip != $new_ip ]]; then
   git commit -a -m "IP Updated" > /dev/null 2>&1
   git push -u origin master > /dev/null 2>&1
   # UPDATE RANDOM BACKGROUND IMAGE
-  i=`find /var/www/mediadb/preview/ -name "*.jpg" | sort -R | tail -1`
-  cp $i /var/www/pics/background.jpg
+  #i=`find /var/www/mediadb/preview/ -name "*.jpg" | sort -R | tail -1`
+  #echo $i
+  #cp $i /var/www/pics/background.jpg
 fi
 
+export PATH=$PATH:/opt/postgresql/latest/bin
+image=`psql -h localhost -U mediadb mediadb < /home/mfranke/marex19.github.io/hiking.sql | sort -R | tail -1 | sed 's/^\ //'`
+convert -resize 50% "$image" /var/www/pics/background.jpg
 
