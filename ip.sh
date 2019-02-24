@@ -19,14 +19,14 @@ if [[ $ip != $new_ip ]]; then
   #echo $i
   #cp $i /var/www/pics/background.jpg
 #fi
-  export PATH=$PATH:/opt/postgresql/latest/bin
-  image=`psql -h localhost -U mediadb mediadb < /home/mfranke/marex19.github.io/hiking.sql | sort -R | tail -1 | sed 's/^\ //'`
-  title=`echo $image | awk 'BEGIN {FS="/"} {print $(NF-1)}'`
-  font=`convert -list font | grep "Font" | sed 's/^\ \ Font:\ //' | sort -R | tail -1`
-  #echo "$title"
-  #echo $font
-  cp "$image" /tmp/tmp.jpg
-  convert -resize 50% -font $font -fill black -pointsize 20 -annotate +50+100 "$title" /tmp/tmp.jpg /var/www/html/pics/background.jpg
-  rm -f /tmp/tmp.jpg
+#  export PATH=$PATH:/opt/postgresql/latest/bin
+#  image=`psql -h localhost -U mediadb mediadb < /home/mfranke/marex19.github.io/hiking.sql | sort -R | tail -1 | sed 's/^\ //'`
+#  title=`echo $image | awk 'BEGIN {FS="/"} {print $(NF-1)}'`
+#  font=`convert -list font | grep "Font" | sed 's/^\ \ Font:\ //' | sort -R | tail -1`
+#  #echo "$title"
+#  #echo $font
+#  cp "$image" /tmp/tmp.jpg
+#  convert -resize 50% -font $font -fill black -pointsize 20 -annotate +50+100 "$title" /tmp/tmp.jpg /var/www/html/pics/background.jpg
+#  rm -f /tmp/tmp.jpg
 fi
 
