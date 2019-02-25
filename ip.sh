@@ -4,6 +4,9 @@ tmp="/tmp/tmp_ip.html"
 ip=`tail -1 $log`
 new_ip=`curl -4 -s http://icanhazip.com`
 
+# git config --global credential.helper 'store --file ~/.my-credentials'
+# cat ~/.my-credentials
+
 #echo $ip
 #echo $new_ip
 
