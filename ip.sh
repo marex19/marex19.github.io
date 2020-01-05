@@ -1,5 +1,5 @@
 #!/bin/bash
-log="/var/log/ip/ip.log"
+log="/var/log.new/ip/ip.log"
 tmp="/tmp/tmp_ip.html"
 ip=`tail -1 $log`
 new_ip=`curl -4 -s http://icanhazip.com`
